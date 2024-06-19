@@ -36,6 +36,34 @@ int inserirJogada(int tabuleiro[6][7], int coluna, int jogador) {
 }
 
 int ganhador(int tabuleiro[6][7], int jogador) {
+	for(int i = 0; i < 6; i++){
+        for(int j = 0; j < 4; j++){
+            if(tabuleiro[i][j] == jogador && tabuleiro[i][j+1] == jogador && tabuleiro[i][j+2] == jogador && tabuleiro[i][j+3] == jogador){
+                return 1;
+            }
+        }
+    }
+    for(int j = 0; j < 7; j++){
+        for(int i = 0; i < 3; i++){
+            if(tabuleiro[i][j] == jogador && tabuleiro[i+1][j] == jogador && tabuleiro[i+2][j] == jogador && tabuleiro[i+3][j] == jogador){
+                return 1;
+            }
+        }
+    }
+    for(int i = 3; i < 6; i++){
+        for(int j = 0; j < 4; j++){
+            if(tabuleiro[i][j] == jogador && tabuleiro[i-1][j+1] == jogador && tabuleiro[i-2][j+2] == jogador && tabuleiro[i-3][j+3] == jogador){
+                return 1;
+            }
+        }
+    }
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 4; j++){
+            if(tabuleiro[i][j] == jogador && tabuleiro[i+1][j+1] == jogador && tabuleiro[i+2][j+2] == jogador && tabuleiro[i+3][j+3] == jogador){
+                return 1;
+            }
+        }
+    }
 	return 0;
 }
 
